@@ -1,0 +1,243 @@
+/* Add your css styles here. Plagiarism will NOT be tolerated! */
+
+.p-16 {
+    padding: 16px;
+}
+
+.w-100-p {
+    width: 100% !important;
+}
+
+.w-80-p {
+    width: 80% !important;
+}
+
+* {
+    margin: 0;
+    font-family: Inter;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    height: 100%;
+    background: #ededed;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    height: 62px;
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    background: white;
+    position: fixed;
+    z-index: 2;
+}
+
+.logo {
+    height: 100%;
+}
+
+.background-up-leaf {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 30px;
+}
+
+.background-down-leaf {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 55vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.title {
+    margin: 16px;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+    max-width: 900px;
+}
+
+.event-card-header {
+    width: 100%;
+    margin-right: 12px;
+    display: flex;
+    position: relative;
+}
+
+.event-card-header-img {
+    width: 100%;
+}
+
+.event-info {
+    position: relative;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.8rem;
+}
+
+.event-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.event-info-container {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 4px;
+}
+
+.event-info-icon {
+    width: 13px;
+    margin-right: 4px;
+}
+
+.description {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 24px;
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    height: 32px;
+}
+
+.event-type {
+    width: 70px;
+    background: var(--cambridge-blue);
+    border-bottom-right-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.premium-only-label {
+    width: 160px;
+    border-bottom-right-radius: 24px;
+    background: #9F9B3E;
+    color: #FFFFFF;
+    position: absolute;
+    top: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.welcome-vanhack-base {
+    width: 30%;
+    height: 80vh;
+    background: rgba(181, 197, 205, 0.5);
+    box-shadow: -7px 11px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: fixed;
+    right: 0;
+    top: 141px;
+}
+
+.welcome-vanhack-container {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    border-radius: 20px;
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    background: #eff8ff;
+    box-shadow: -7px 11px 10px rgba(0, 0, 0, 0.25);
+}
+
+.welcome-vanhack-img {
+    max-width: 100%;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    width: 100%;
+}
+
+.welcome-vanhack-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 78px;
+}
+
+.welcome-vanhack-title h1 {
+    font-size: 3rem;
+}
+
+.welcome-vanhack-title h2 {
+    font-size: 2.5rem;
+    color: #2c98f0;
+    margin-left: auto;
+    margin-right: 71px;
+}
+
+.event-footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    bottom: 0;
+    align-items: center;
+}
+
+@media only screen and (min-width: 992px) {
+    .events-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+:root {
+    /* Not my favorite that line-height has to be united, but needed */
+    --lh: 1.4rem;
+}

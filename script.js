@@ -165,6 +165,7 @@ function showModal(id) {
   const event = events.find(item => item.id === id);
   const body = document.getElementsByTagName('body')[0];
   const dialog = body.appendChild(new EventCardDialog());
+
   dialog.innerHTML = `
   <dialog slot="dialog-content" id="dialog">
   <img src="https://svgshare.com/i/PR5.svg" onclick="closeModal()" class="dialog-close-btn" alt="close button" />
@@ -202,7 +203,7 @@ function showModal(id) {
               iaculis. Ut
               sollicitudin malesuada aliquet.
           </p>
-          <button id="apply-button" onclick="applyButton(events[0])" class="dialog-btn">
+          <button id="apply-button" onclick="applyButton(${event.id})" class="btn">
               Apply
           </button>
       </div>
@@ -217,10 +218,47 @@ function showModal(id) {
 }
 
 function closeModal() {
-  var currentDialog = document.getElementById("dialog");
+  const currentDialog = document.getElementById("dialog");
   currentDialog.remove();
 }
 
-function applyButton(event) {
-  console.log(event);
+function applyButton(id) {
+  const event = events.find(event => event.id === id);
+  if (!appliedEvents.find(appliedEvent => appliedEvent.id === id)) {
+    appliedEvents = [
+      ...appliedEvents,
+      event
+    ]
+  }
+  showNotification(event);
+  this.closeModal();
 }
+
+function showNotification(event) {
+  const body = document.getElementsByTagName('body')[0];
+  const snackbar = document.createElement('div');
+  snackbar.setAttribute('id', 'snackbar');
+  snackbar.innerHTML = `You have applied to <b>${event.title}</b> successfully, remember that you can see your applied events in the panel on top rigth
+  <img src="https://svgshare.com/i/PR5.svg" onclick="closeSnackbar()" class="snackbar-close-btn" alt="close button" />
+  `;
+  snackbar.className = 'show';
+  body.appendChild(snackbar);
+  setTimeout(() => {
+    snackbar.className = snackbar.className.replace('show', '');
+  }, 10500);
+}
+
+function closeSnackbar() {
+  const snackbar = document.getElementById('snackbar');
+  snackbar.remove();
+}
+
+document.onkeydown = function (evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27) {
+    if (typeof dialog !== 'undefined') {
+      this.closeModal();
+    }
+  }
+};
+

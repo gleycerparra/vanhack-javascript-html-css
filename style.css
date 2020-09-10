@@ -80,23 +80,6 @@ body {
     font-size: 1rem;
 }
 
-.applied-events-container {
-    display: flex;
-    width: 252px;
-    background: white;
-    position: absolute;
-    border-radius: 24px;
-    right: 0;
-    top: 72px;
-    right: 30px;
-}
-
-.applied-event-avatar {
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
 
 .logo {
     height: 100%;
@@ -133,93 +116,7 @@ body {
 
 .title {
     margin: 16px;
-}
-
-.event-card {
-    display: flex;
-    margin: 16px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    overflow: hidden;
-    width: 304px;
-    color: #455A64;
-}
-
-.events-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 48px;
-    max-width: 900px;
-}
-
-.event-card-header {
-    width: 100%;
-    margin-right: 12px;
-    display: flex;
-    position: relative;
-}
-
-.event-card-header-img {
-    width: 100%;
-}
-
-.event-info {
-    position: relative;
-    text-align: center;
-    padding: 16px;
-    font-size: 0.8rem;
-}
-
-.event-title {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.event-info-container {
-    display: flex;
-    justify-content: start;
-    margin-bottom: 4px;
-}
-
-.event-info-icon {
-    width: 13px;
-    margin-right: 4px;
-}
-
-.description {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 24px;
-    display: block !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    height: 32px;
-}
-
-.event-type {
-    width: 70px;
-    background: var(--cambridge-blue);
-    border-bottom-right-radius: 24px;
-    border-top-right-radius: 24px;
-    padding: 3px;
-    font-size: 10px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-}
-
-.premium-only-label {
-    width: 160px;
-    border-bottom-right-radius: 24px;
-    background: #9F9B3E;
-    color: #FFFFFF;
-    position: absolute;
-    top: 22px;
-    font-weight: bold;
+    margin-top: 120px;
     text-align: center;
 }
 
@@ -271,152 +168,8 @@ body {
     margin-left: auto;
     margin-right: 71px;
 }
-
-.event-footer {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-    bottom: 0;
-    align-items: center;
-}
-
-#dialog {
-    position: fixed;
-    top: 15%;
-    left: 30%;
-    margin-left: -100px;
-    margin-top: -25px;
-    background: yellow;
-    background: #FFFFFF;
-    box-shadow: 3px 8px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    border: none;
-    z-index: 2;
-    width: 50%;
-}
-
-.dialog-close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    cursor: pointer;
-}
-
-.dialog-container {
-    display: flex;
-    min-height: 400px;
-    max-height: 50vh;
-}
-
-.dialog-img-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    width: 100%;
-    background-size: cover;
-}
-
-.dialog-img {
-    width: 100%;
-}
-
-.dialog-img-footer {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    bottom: 0;
-    align-items: center;
-}
-
-.dialog-info-container {
-    margin: 0 24px;
-    color: #455A64;
-    width: 80%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.dialog-event-type {
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 29px;
-}
-
-.dialog-event-title {
-    margin-top: 8px;
-    font-weight: bold;
-    font-size: 1.6rem;
-    line-height: 35px;
-    margin-bottom: 8px;
-}
-
-.dialog-description {
-    font-size: 0.75rem;
-}
-
-#dialog-base {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    visibility: hidden;
-}
-#dialog-base:before {
-    content:"";
-    background: rgba(0, 0, 0, .8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-}
-
-#dialog::backdrop {
-    background: black;
-    opacity: 0.7;
-}
-
-#snackbar {
-    visibility: hidden;
-    margin-left: -125px;
-    background-color: #2C98F0;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 3;
-    font-size: 17px;
-    top: 10%;
-    max-width: 41%;
-    border-radius: 8px;
-    left: 38%;
-  }
   
-#snackbar.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 10s;
-    animation: fadein 0.5s, fadeout 0.5s 10s;
-}
 
-.snackbar-close-btn {
-    position: absolute;
-    top: 7px;
-    right: 7px;
-    cursor: pointer;
-    width: 19px;
-}
-  
   @-webkit-keyframes fadein {
     from {top: 0; opacity: 0;} 
     to {top: 10%; opacity: 1;}
@@ -442,9 +195,23 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
     }
+    
 }
 
-:root {
-    /* Not my favorite that line-height has to be united, but needed */
-    --lh: 1.4rem;
+@media only screen and (max-device-width: 1024px) {
+    .welcome-vanhack-base {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .pplied-events-btn {
+        position: relative;
+    }
 }

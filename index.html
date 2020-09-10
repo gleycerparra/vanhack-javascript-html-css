@@ -10,41 +10,42 @@
 </head>
 
 <body>
-
-    <!--     <menu>
-        <button id="updateDetails">Update details</button>
-    </menu> -->
     <div class="main w-100-p">
         <header class="header">
             <img src="https://images.typeform.com/images/ZqK9CUCgZhWW/image/default" class="logo" alt="vanhack logo" />
-            <button type="button" class="btn applied-events-btn">Applied Events</button>
-            <div class="applied-events-container">
-                <img src="https://www.pcma.org/wp-content/uploads/2017/07/Event-Technology.jpg" class="applied-event-avatar" alt="Avatar"
-                    class="applied event avatar">
-            </div>
+            <button type="button" class="btn applied-events-btn" onclick="openAppliedEventsList()">Applied
+                Events</button>
+            <applied-events-container></applied-events-container>
         </header>
         <div class="container">
             <section>
                 <img src="https://svgshare.com/i/PLU.svg" alt="welcome vanhack" class="background-up-leaf" />
                 <img src="https://svgshare.com/i/PN0.svg" alt="welcome vanhack" class="background-down-leaf" />
                 <h1 class="title">Upcoming events</h1>
-                <div id="events-container" class="events-container">
-                </div>
+                <span id="events-container">
+                </span>
             </section>
         </div>
-        <section>
-            <div class="welcome-vanhack-base">
-                <div class="welcome-vanhack-container">
-                    <div class="welcome-vanhack-title">
-                        <h1>Welcome to</h1>
-                        <h2 style="color: #2C98F0;">VanHack</h2>
-                    </div>
-                    <img src="https://svgshare.com/i/PMt.svg" alt="welcome vanhack" class="welcome-vanhack-img" />
+        
+    </body>
+    
+    <section>
+        <div class="welcome-vanhack-base">
+            <div class="welcome-vanhack-container">
+                <div class="welcome-vanhack-title">
+                    <h1>Welcome to</h1>
+                    <h2 style="color: #2C98F0;">VanHack</h2>
                 </div>
+                <img src="https://svgshare.com/i/PMt.svg" alt="welcome vanhack" class="welcome-vanhack-img" />
             </div>
-        </section>
-    </div>
-    <script src="script.js"></script>
+        </div>
+    </section>
+</div>
+<event-snackbar></event-snackbar>
+
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+<script src="script.js"></script>
+
 </body>
 
 </html>

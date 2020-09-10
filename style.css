@@ -74,12 +74,6 @@ body {
     cursor: pointer;
 }
 
-.applied-events-btn {
-    position: absolute;
-    right: 45px;
-    font-size: 1rem;
-}
-
 
 .logo {
     height: 100%;

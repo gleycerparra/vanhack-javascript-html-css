@@ -92,14 +92,6 @@ function showModal(id) {
     body.appendChild(dialog);
 }
 
-function openAppliedEventsList() {
-    const event = new CustomEvent("openAppliedEventsList", {
-        bubbles: true,
-        cancelable: false
-    });
-    window.dispatchEvent(event)
-}
-
 class EventsCardsContainer extends HTMLElement {
     constructor() {
         super();
@@ -334,6 +326,8 @@ class EventCard extends HTMLElement {
             overflow: hidden;
             width: 304px;
             color: #455A64;
+            height: 334px;
+            position: relative;
         }
 
         .event-card-header {
@@ -341,14 +335,15 @@ class EventCard extends HTMLElement {
             margin-right: 12px;
             display: flex;
             position: relative;
+            height: 160px;
         }
 
         .event-card-header-img {
             width: 100%;
+            object-fit: cover;
         }
 
         .event-info {
-            position: relative;
             text-align: center;
             padding: 16px;
             font-size: 0.8rem;
@@ -831,10 +826,6 @@ class AppliedEventContainer extends HTMLElement {
                 }
             });
         } else {
-            this.appliedEvents = [
-                ...this.appliedEvents,
-                this.event
-            ];
             if (this.event.type === 'Premium-only Webinar') {
                 notificationEvent = new CustomEvent("notificationEvent", {
                     ...eventProperties,
@@ -850,6 +841,10 @@ class AppliedEventContainer extends HTMLElement {
                         message: `You have applied to <b>${this.event.title}</b> successfully, remember that you can see your applied events in the panel on top rigth`
                     }
                 });
+                this.appliedEvents = [
+                    ...this.appliedEvents,
+                    this.event
+                ];
             }
             this.innerHTML = this.render();
         }
@@ -1037,6 +1032,81 @@ class SnackBar extends HTMLElement {
         </div>`
     }
 }
+
+class AppliedEventButton extends HTMLElement {
+    constructor() {
+        super();
+
+        this.$btn = null;
+
+        window.addEventListener("applyEvent", (e) => {
+            this.newEvent = true;
+            this.connectedCallback();
+        });
+    }
+
+    get newEvent() {
+        return this._newEvent;
+    }
+
+    set newEvent(val) {
+        this._newEvent = val;
+    }
+
+    connectedCallback() {
+        this.innerHTML = this.render();
+
+        this.$btn = this.querySelector('#event-btn');
+        this.$btn.addEventListener('click', () => {
+            this.openAppliedEventsList();
+            this.newEvent = false;
+            this.connectedCallback();
+        })
+    }
+
+    openAppliedEventsList() {
+        const event = new CustomEvent("openAppliedEventsList", {
+            bubbles: true,
+            cancelable: false
+        });
+        this.dispatchEvent(event);
+        
+    }
+
+    styles() {
+        return /*html*/`
+    <style>
+
+        .applied-events-btn {
+            position: absolute;
+            right: 45px;
+            font-size: 1rem;
+            top: 21px;
+        }
+
+        .event-notification-alert {
+            width: 15px;
+            height: 15px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 18px;
+            right: 47px;
+        }
+    </style>
+    `
+    }
+
+    render() {
+        return /*html*/`
+        ${this.styles()}
+        <div class="container">
+            <button id="event-btn" type="button" class="btn applied-events-btn">Applied Events</button>
+            ${this.newEvent ? '<div class="event-notification-alert"></div>' : ''}
+        </div>
+    `
+    }
+}
 class AppliedEvent extends HTMLElement {
     constructor() {
         super();
@@ -1154,6 +1224,7 @@ customElements.define("event-card", EventCard);
 customElements.define("event-card-dialog", EventCardDialog);
 customElements.define("event-snackbar", SnackBar);
 customElements.define("applied-events-container", AppliedEventContainer);
+customElements.define("applied-event-btn", AppliedEventButton);
 customElements.define("applied-event", AppliedEvent);
 
 init();
